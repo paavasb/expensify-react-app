@@ -2,31 +2,39 @@
 
 exports[`should render correctly for multiple items 1`] = `
 <div>
-  <p>
+  <h1>
     Viewing 
     3
-     expenses totalling 
+     
+    expenses
+     totalling 
     $1,141.95
-  </p>
+  </h1>
 </div>
 `;
 
 exports[`should render correctly for one item 1`] = `
 <div>
-  <p>
-    Viewing 1 expense totalling 
+  <h1>
+    Viewing 
+    1
+     
+    expense
+     totalling 
     $1.95
-  </p>
+  </h1>
 </div>
 `;
 
 exports[`should render correctly for zero items 1`] = `
 <div>
-  <p>
+  <h1>
     Viewing 
     0
-     expenses totalling 
+     
+    expenses
+     totalling 
     $0.00
-  </p>
+  </h1>
 </div>
 `;
