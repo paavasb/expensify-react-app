@@ -8,7 +8,7 @@ export class EditExpensePage extends React.Component {
         this.props.editExpense(this.props.expense.id, expense);
         this.props.history.push("/");
     };
-    onClick = () => {
+    onClick = (expense) => {
         this.props.removeExpense({ id: this.props.expense.id });
         this.props.history.push('/');
     };
@@ -31,7 +31,7 @@ export class EditExpensePage extends React.Component {
 
 const mapDispatchtoProps = (dispatch, props) => ({
     editExpense: (id, expense) => dispatch(editExpense(id,expense)),
-    removeExpense: (id) => dispatch(removeExpense({ id }))
+    removeExpense: ({ id }) => dispatch(removeExpense({ id }))
 });
 
 const mapStateToProps = (state, props) => ({
