@@ -29,16 +29,10 @@ database.ref().set({
     console.log('This failed.', error);
 });
 
-//database.ref().set('This is my data.');
-
-// database.ref('age').set(21);
-// database.ref('location/city').set('Edinburgh');
-
-database.ref('attributes').set({
-    height: 180,
-    weight: 83
-}).then(() => {
-    console.log('Data is added');
-}).catch((error) => {
-    console.log('This addition failed.', error);
-});
+// database.ref()
+//     .remove()
+//     .then(() => {
+//         console.log('isSingle removed');
+//     }).catch((error) => {
+//         console.log('This failed', error);
+//     });
