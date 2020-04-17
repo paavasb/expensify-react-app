@@ -15,29 +15,66 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: 'Paavas Bhasin',
-    age: 20,
-    stressLevel: 6,
-    job: {
-        title: 'Soft Dev',
-        company: 'Facebook'    
-    },
-    location: {
-        city: 'New Delhi',
-        country: 'India'
-    }
-}).then(() => {
-    console.log('Data is saved');
-}).catch((error) => {
-    console.log('This failed.', error);
+const onValChange = database.ref().on('value', (snapshot) => {
+    const person = snapshot.val();
+    console.log(`${person.name} is a ${person.job.title} at ${person.job.company}.`);
+}, (e) => {
+    console.log('Error:', e);
 });
 
-database.ref().update({
-    stressLevel: 9,
-    'job/company': 'Amazon',
-    'location/city': 'Seattle'
-});
+// const onValueChange = database.ref().on('value', (snapshot) => {
+//     console.log(snapshot.val());
+// }, (error) => {
+//     console.log('Error with data fetching', error);
+// });
+
+// setTimeout(() => {
+//     database.ref('age').set(21);
+// }, 3500);
+
+// setTimeout(() => {
+//     database.ref().off(onValueChange);
+// }, 7000);
+
+// setTimeout(() => {
+//     database.ref('age').set(23);
+// }, 10500);
+
+
+// database.ref('location/country')
+//     .once('value')
+//     .then((snapshot) => {
+//         const val = snapshot.val();
+//         console.log(val);
+//     })
+//     .catch((e) => {
+//         console.log('Error fetching data', e);
+//     });
+
+
+// database.ref().set({
+//     name: 'Paavas Bhasin',
+//     age: 20,
+//     stressLevel: 6,
+//     job: {
+//         title: 'Soft Dev',
+//         company: 'Facebook'    
+//     },
+//     location: {
+//         city: 'New Delhi',
+//         country: 'India'
+//     }
+// }).then(() => {
+//     console.log('Data is saved');
+// }).catch((error) => {
+//     console.log('This failed.', error);
+// });
+
+// database.ref().update({
+//     stressLevel: 9,
+//     'job/company': 'Amazon',
+//     'location/city': 'Seattle'
+// });
 
 // database.ref()
 //     .remove()
