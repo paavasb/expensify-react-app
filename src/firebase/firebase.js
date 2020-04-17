@@ -12,6 +12,25 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
-firebase.database().ref().set({
-    name: 'Paavas Bhasin'
+
+const database = firebase.database();
+
+database.ref().set({
+    name: 'Paavas Bhasin',
+    age: 20,
+    isSingle: false,
+    location: {
+        city: 'New Delhi',
+        country: 'India'
+    }
+});
+
+//database.ref().set('This is my data.');
+
+database.ref('age').set(21);
+database.ref('location/city').set('Edinburgh');
+
+database.ref('attributes').set({
+    height: 180,
+    weight: 83
 });
