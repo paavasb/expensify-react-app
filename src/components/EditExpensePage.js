@@ -26,7 +26,7 @@ export class EditExpensePage extends React.Component {
                         expense={this.props.expense}
                     />
                     <button 
-                        className="button button--secondary"
+                        className="button button--secondary button--expenses"
                         onClick={this.onClick}
                     >
                         Remove Expense

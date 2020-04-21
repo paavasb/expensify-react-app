@@ -5,11 +5,10 @@
     display: inline-block;
     font-size: $font-size-large;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.5;
     padding: $s-size;
     text-align: center;
     text-decoration: none;
-    width: 20vw;
 }
 
 .button--link {
@@ -19,4 +18,10 @@
 
 .button--secondary {
     background: #888888;
+}
+
+.button--expenses {
+    @media (min-width: $desktop-breakpoint) {
+        width: 20vw;
+    }
 }
