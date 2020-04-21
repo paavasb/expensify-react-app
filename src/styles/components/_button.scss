@@ -9,9 +9,14 @@
     padding: $s-size;
     text-align: center;
     text-decoration: none;
+    width: 20vw;
 }
 
 .button--link {
     background: none;
     font-weight: 200;
+}
+
+.button--secondary {
+    background: #888888;
 }
